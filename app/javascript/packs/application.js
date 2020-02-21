@@ -15,5 +15,11 @@
 // const images = require.context('../images', true)
 // const imagePath = (name) => images(name, true)
 import 'bootstrap';
+import AOS from 'aos';
+import 'aos/dist/aos.css'; // You can also use <link> for styles
+// import { loadDynamicBannerText } from '../components/banner';
+
+AOS.init();
+// loadDynamicBannerText();
 
 console.log('Hello World from Webpacker')
