@@ -17,9 +17,9 @@
 import 'bootstrap';
 import AOS from 'aos';
 import 'aos/dist/aos.css'; // You can also use <link> for styles
-// import { loadDynamicBannerText } from '../components/banner';
+import { loadDynamicBannerText } from '../components/banner';
 
 AOS.init();
-// loadDynamicBannerText();
+loadDynamicBannerText();
 
 console.log('Hello World from Webpacker')

@@ -1,5 +1,12 @@
+<nav class="navbar-lewagon">
+  <%= link_to cocktails_path do %>
+    <h1><i class="fas fa-cocktail"></i> Cocktails</h1>
+  <% end %>
+</nav>
+
 <div class="container">
   <h1><%= @cocktail.name %></h1>
+  <%= cl_image_tag @cocktail.photo.key, height: 400, width: 300, crop: :fill, class: "img-smooth" %>
   <ul>
     <% @cocktail.doses.each do |dose| %>
       <li> <%= dose.description %> - <%= dose.ingredient.name %> <%= link_to "Delete", dose_path(dose), method: "delete" %></li>
@@ -9,7 +16,6 @@
   <p>Add a dose</p>
 
   <%= render 'doses/form', cocktail: @cocktail, dose: @dose%>
-
-  <%= link_to "Back", cocktails_path %>
+  
 </div>
 
