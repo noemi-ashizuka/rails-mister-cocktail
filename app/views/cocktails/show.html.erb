@@ -1,21 +1,41 @@
-<nav class="navbar-lewagon">
-  <%= link_to cocktails_path do %>
-    <h1><i class="fas fa-cocktail"></i> Cocktails</h1>
+<nav class="navbar navbar-expand-lg navbar-light bg-light mb-3">
+  <%= link_to cocktails_path, class: "navbar-brand" do %>
+    <h1 class="navi-title"><i class="fas fa-cocktail accent-blue"></i> Cocktails</h1>
   <% end %>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo02" aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+  <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
+    <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
+    </ul>
+    <%= link_to new_cocktail_path do %>
+      <p class="styled-link navi-link"><i class="fas fa-plus"></i> Create a cocktail </p>
+    <% end %>
+  </div>
 </nav>
 
 <div class="container">
-  <h1><%= @cocktail.name %></h1>
-  <%= cl_image_tag @cocktail.photo.key, height: 400, width: 300, crop: :fill, class: "img-smooth" %>
-  <ul>
-    <% @cocktail.doses.each do |dose| %>
-      <li> <%= dose.description %> - <%= dose.ingredient.name %> <%= link_to "Delete", dose_path(dose), method: "delete" %></li>
-    <% end %>
-  </ul>
+  <div class="card-show">
+    <%= cl_image_tag @cocktail.photo.key, height: 400, width: 300, crop: :fill, class: "card-show-image" %>
+    <div class="card-show-content">
+      <h1><%= @cocktail.name %></h1>
+      <ul>
+        <% @cocktail.doses.each do |dose| %>
+          <li> <%= dose.description %> - <%= dose.ingredient.name %> <%= link_to dose_path(dose), method: "delete" do %>
+            <i class="fas fa-eraser"></i>
+          </li>
+          <% end %>
+        <% end %>
+      </ul>
+    </div>
+  </div>
 
-  <p>Add a dose</p>
+  <p class="navi-link">Add a dose</p>
 
-  <%= render 'doses/form', cocktail: @cocktail, dose: @dose%>
-  
+  <div class="mb-3">
+    <%= render 'doses/form', cocktail: @cocktail, dose: @dose%>
+  </div>
+
 </div>
 

@@ -1,0 +1,23 @@
+.styled-link {
+  text-decoration: none !important;
+  font-weight: 300;
+}
+
+.styled-link:hover {
+  opacity: 0.5;
+}
+
+.navi-link {
+  font-size: 18px;
+  letter-spacing: 1px;
+  margin-top: 16px;
+}
+
+.navi-title {
+  letter-spacing: 1px;
+  color: $dark-blue;
+}
+
+.accent-blue {
+  color: $light-blue;
+}

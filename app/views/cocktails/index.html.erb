@@ -1,20 +1,29 @@
-<nav class="navbar-lewagon d-flex">
-<h1><i class="fas fa-cocktail"></i> Cocktails</h1>
-<%= link_to new_cocktail_path do %>
-  <p class: "styled-link"><i class="fas fa-plus"></i> Create a cocktail </p>
-<% end %>
-</nav>
-  <div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.1), rgba(0,0,0,0.1)), url('https://images.unsplash.com/photo-1509669803555-fd5edd8d5a41?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1500&q=80');">
-    <div class="container">
-    <p>
-  <span id="banner-typed-text"></span>
-    </p>
-    <h1>Welcome to Cocktail Bar</h1>
-    </div>
-  
-      
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+  <%= link_to cocktails_path, class: "navbar-brand" do %>
+    <h1 class="navi-title"><i class="fas fa-cocktail accent-blue"></i> Cocktails</h1>
+  <% end %>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo02" aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
 
+  <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
+    <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
+    </ul>
+    <%= link_to new_cocktail_path do %>
+      <p class="styled-link navi-link"><i class="fas fa-plus"></i> Create a cocktail </p>
+    <% end %>
   </div>
+</nav>
+
+
+<div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.1), rgba(0,0,0,0.1)), url('https://images.unsplash.com/photo-1509669803555-fd5edd8d5a41?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1500&q=80');">
+  <div class="container">
+    <p>
+      <span id="banner-typed-text"></span>
+    </p>
+  <h1>Welcome to Cocktail Bar</h1>
+  </div>
+</div>
   
 <div class="container">
   <div class="cards row">
