@@ -25,12 +25,16 @@
   </div>
 </div>
   
-<div class="container">
+<div class="container-fluid">
   <div class="cards row">
     <% @cocktails.each do |cocktail| %>
       <div class="col-12 col-lg-4">
         <div data-aos="zoom-in">
-          <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.1), rgba(0,0,0,0.1)), url('<%= cl_image_path cocktail.photo.key, height: 300, width: 400, crop: :thumb, gravity: :center %>')">
+        <% if cocktail.photo.attached? %>
+          <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.1), rgba(0,0,0,0.1)), url('<%= cl_image_path cocktail.photo.key, height: 300, width: 400, crop: :thumb, gravity: :center %>');">
+        <% else %>
+          <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.1), rgba(0,0,0,0.1)), url('<%= cl_image_path 'empty_glass.jpg', height: 300, width: 400, crop: :thumb, gravity: :center %>');">
+        <% end %>
             <%= link_to cocktail.name, cocktail_path(cocktail) %>
           </div>
         </div>

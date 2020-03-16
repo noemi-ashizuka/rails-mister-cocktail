@@ -15,9 +15,13 @@
   </div>
 </nav>
 
-<div class="container">
+<div class="container-fluid">
   <div class="card-show">
+  <% if @cocktail.photo.attached? %>
     <%= cl_image_tag @cocktail.photo.key, height: 400, width: 300, crop: :fill, class: "card-show-image" %>
+  <% else %>
+    <%= cl_image_tag "https://res.cloudinary.com/dtewjoisz/image/upload/v1584347690/gtaf46ABR2ZK9VJFzVxn23pi.jpg", height: 400, width: 300, crop: :fill, class: "card-show-image" %>
+  <% end %>
     <div class="card-show-content">
       <h1><%= @cocktail.name %></h1>
       <ul>
@@ -31,9 +35,10 @@
     </div>
   </div>
 
-  <p class="navi-link">Add a dose</p>
+  
 
-  <div class="mb-3">
+  <div class="container-fluid mb-3">
+    <p class="navi-link">Add a dose</p>
     <%= render 'doses/form', cocktail: @cocktail, dose: @dose%>
   </div>
 
