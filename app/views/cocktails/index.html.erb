@@ -33,7 +33,7 @@
         <% if cocktail.photo.attached? %>
           <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.1), rgba(0,0,0,0.1)), url('<%= cl_image_path cocktail.photo.key, height: 300, width: 400, crop: :thumb, gravity: :center %>');">
         <% else %>
-          <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.1), rgba(0,0,0,0.1)), url('https://res.cloudinary.com/dtewjoisz/image/upload/c_thumb,w_200,g_face/v1584347690/gtaf46ABR2ZK9VJFzVxn23pi.jpg');">
+          <div class="card-category card-bg-img">
         <% end %>
             <%= link_to cocktail.name, cocktail_path(cocktail) %>
           </div>

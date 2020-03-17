@@ -22,7 +22,7 @@
   width: 800px;
   height: 400px;
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: 1fr 2fr;
   border-radius: 4px;
   box-shadow: 2px 2px 4px #5f5f5f;
   background-color: white;
@@ -43,7 +43,8 @@
 
 .card-show-content ul {
   list-style-type: circle;
-  list-style-position: outside;
+  list-style-position: initial;
+  margin-left: -50px;
 }
 
 @media screen and (max-width: 600px) {
@@ -90,4 +91,10 @@
   .card-show-content h1 {
     font-size: 18px;
   }
+}
+
+.card-bg-img {
+  width: 300px;
+  height: 200px;
+  background-image: linear-gradient(rgba(0,0,0,0.1), rgba(0,0,0,0.1)), url('https://res.cloudinary.com/dtewjoisz/image/upload/c_thumb,w_300,g_face/v1584347690/gtaf46ABR2ZK9VJFzVxn23pi.jpg');
 }
