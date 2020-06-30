@@ -1,24 +1,15 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+This project user ruby '2.6.5'
 
-Things you may want to cover:
-
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+After cloning the repository run
+```
+bundle install
+```
+To initialize the database
+```
+rails db:create
+rails db:migrate
+rails db:seed
+```
+You will need a Cloudinary key to store images from https://cloudinary.com/ and you can store it in an .env file with the variable name *CLOUDINARY_URL*
