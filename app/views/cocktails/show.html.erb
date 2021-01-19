@@ -16,33 +16,32 @@
 </nav>
 
 <div class="wrapper-div my-3 mx-3">
-<div class="container-fluid">
-  <div class="card-show">
-  <% if @cocktail.photo.attached? %>
-    <%= cl_image_tag @cocktail.photo.key, height: 400, width: 300, crop: :fill, class: "card-show-image" %>
-  <% else %>
-    <%= cl_image_tag "https://res.cloudinary.com/dtewjoisz/image/upload/v1584347690/gtaf46ABR2ZK9VJFzVxn23pi.jpg", height: 400, width: 300, crop: :fill, class: "card-show-image" %>
-  <% end %>
-    <div class="card-show-content">
-      <h1><%= @cocktail.name %></h1>
-      <ul>
-        <% @cocktail.doses.each do |dose| %>
-          <li> <%= dose.description %>  <%= dose.ingredient.name %> <%= link_to dose_path(dose), method: "delete" do %>
-            <i class="fas fa-eraser"></i>
-          </li>
+  <div class="container-fluid">
+    <div class="card-show">
+    <% if @cocktail.photo.attached? %>
+      <%= cl_image_tag @cocktail.photo.key, height: 400, width: 300, crop: :fill, class: "card-show-image" %>
+    <% else %>
+      <%= cl_image_tag "https://res.cloudinary.com/dtewjoisz/image/upload/v1584347690/gtaf46ABR2ZK9VJFzVxn23pi.jpg", height: 400, width: 300, crop: :fill, class: "card-show-image" %>
+    <% end %>
+      <div class="card-show-content">
+        <h1><%= @cocktail.name %></h1>
+        <ul>
+          <% @cocktail.doses.each do |dose| %>
+            <li> 
+              <%= dose.description %>  
+              <%= dose.ingredient.name %> 
+              <%= link_to dose_path(dose), method: "delete" do %>
+                <i class="fas fa-eraser"></i>
+              <% end %>
+            </li>
           <% end %>
-        <% end %>
-      </ul>
+        </ul>
+      </div>
+    </div>
+
+    <div class="container-fluid mb-3">
+      <p class="navi-link">Add a dose</p>
+      <%= render 'doses/form', cocktail: @cocktail, dose: @dose%>
     </div>
   </div>
-
-  
-
-  <div class="container-fluid mb-3">
-    <p class="navi-link">Add a dose</p>
-    <%= render 'doses/form', cocktail: @cocktail, dose: @dose%>
-  </div>
-
 </div>
-</div>
-
